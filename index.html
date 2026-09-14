@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QuickTools Hub - Free Online Calculators</title>
+<meta name="description" content="Free online calculators and useful tools: EMI, GST, SIP, BMI, age, percentage, discount, profit, currency and more.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#172033;color:#fff;padding:22px 16px;text-align:center}header h1{margin:0 0 7px;font-size:30px}header p{margin:0;color:#dce4f2}
+nav{background:#fff;border-bottom:1px solid #e5e9f2;padding:10px;text-align:center;position:sticky;top:0;z-index:5}
+nav a{margin:0 10px;color:#172033;text-decoration:none;font-weight:600;font-size:14px}
+.container{max-width:1100px;margin:auto;padding:20px 14px}
+.ad{background:#fff;border:1px dashed #b8c1d1;color:#7a8496;text-align:center;padding:18px;margin:12px 0 22px;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #e4e8f0;border-radius:14px;padding:18px;box-shadow:0 3px 12px rgba(20,35,60,.05)}
+.card h2{font-size:19px;margin:0 0 12px}.card p{color:#697386;font-size:14px}
+label{display:block;font-size:13px;font-weight:600;margin:9px 0 5px}
+input,select,button{width:100%;padding:11px;border-radius:8px;border:1px solid #ccd3df;font-size:15px}
+button{margin-top:11px;background:#172033;color:#fff;border:0;cursor:pointer;font-weight:700}
+.result{margin-top:10px;padding:10px;background:#f1f4f9;border-radius:8px;font-weight:700;min-height:20px}
+footer{background:#172033;color:#fff;text-align:center;padding:25px 15px;margin-top:25px}
+footer a{color:#dce4f2;margin:0 7px}
+.small{font-size:12px;color:#7a8496}
+</style>
+</head>
+<body>
+<header><h1>QuickTools Hub</h1><p>Free online calculators & everyday tools</p></header>
+<nav><a href="#tools">Tools</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<main class="container">
+<div class="ad">Advertisement</div>
+<h2 id="tools">20 Free Tools</h2>
+<div class="grid">
+
+<div class="card"><h2>Percentage Calculator</h2><label>Value</label><input id="p1" type="number"><label>Percent (%)</label><input id="p2" type="number"><button onclick="calcPercent()">Calculate</button><div id="pr" class="result"></div></div>
+
+<div class="card"><h2>Age Calculator</h2><label>Date of birth</label><input id="dob" type="date"><button onclick="calcAge()">Calculate Age</button><div id="ager" class="result"></div></div>
+
+<div class="card"><h2>EMI Calculator</h2><label>Loan amount (₹)</label><input id="loan" type="number"><label>Annual interest (%)</label><input id="rate" type="number" step="0.01"><label>Tenure (months)</label><input id="months" type="number"><button onclick="calcEMI()">Calculate EMI</button><div id="emir" class="result"></div></div>
+
+<div class="card"><h2>GST Calculator</h2><label>Amount (₹)</label><input id="gstamt" type="number"><label>GST (%)</label><input id="gst" type="number" value="18"><button onclick="calcGST()">Calculate</button><div id="gstr" class="result"></div></div>
+
+<div class="card"><h2>SIP Calculator</h2><label>Monthly investment (₹)</label><input id="sip" type="number"><label>Expected annual return (%)</label><input id="siprate" type="number" value="12"><label>Years</label><input id="sipyears" type="number" value="10"><button onclick="calcSIP()">Calculate</button><div id="sipr" class="result"></div></div>
+
+<div class="card"><h2>BMI Calculator</h2><label>Weight (kg)</label><input id="weight" type="number"><label>Height (cm)</label><input id="height" type="number"><button onclick="calcBMI()">Calculate BMI</button><div id="bmir" class="result"></div></div>
+
+<div class="card"><h2>Discount Calculator</h2><label>Original price (₹)</label><input id="price" type="number"><label>Discount (%)</label><input id="disc" type="number"><button onclick="calcDiscount()">Calculate</button><div id="discr" class="result"></div></div>
+
+<div class="card"><h2>Profit & Loss</h2><label>Cost price (₹)</label><input id="cp" type="number"><label>Selling price (₹)</label><input id="sp" type="number"><button onclick="calcPL()">Calculate</button><div id="plr" class="result"></div></div>
+
+<div class="card"><h2>Simple Interest</h2><label>Principal (₹)</label><input id="siP" type="number"><label>Rate (%)</label><input id="siR" type="number"><label>Time (years)</label><input id="siT" type="number"><button onclick="calcSI()">Calculate</button><div id="sir" class="result"></div></div>
+
+<div class="card"><h2>Compound Interest</h2><label>Principal (₹)</label><input id="ciP" type="number"><label>Annual rate (%)</label><input id="ciR" type="number"><label>Years</label><input id="ciT" type="number"><button onclick="calcCI()">Calculate</button><div id="cir" class="result"></div></div>
+
+<div class="card"><h2>Ratio Calculator</h2><label>First number</label><input id="ra" type="number"><label>Second number</label><input id="rb" type="number"><button onclick="calcRatio()">Simplify</button><div id="rr" class="result"></div></div>
+
+<div class="card"><h2>Average Calculator</h2><label>Numbers (comma separated)</label><input id="avg" placeholder="10,20,30,40"><button onclick="calcAvg()">Calculate</button><div id="avgr" class="result"></div></div>
+
+<div class="card"><h2>Hours to Minutes</h2><label>Hours</label><input id="hours" type="number"><button onclick="calcMinutes()">Convert</button><div id="minr" class="result"></div></div>
+
+<div class="card"><h2>Minutes to Hours</h2><label>Minutes</label><input id="minutes" type="number"><button onclick="calcHours()">Convert</button><div id="hourr" class="result"></div></div>
+
+<div class="card"><h2>Temperature Converter</h2><label>Temperature</label><input id="temp" type="number"><select id="unit"><option value="c">Celsius → Fahrenheit</option><option value="f">Fahrenheit → Celsius</option></select><button onclick="calcTemp()">Convert</button><div id="tempr" class="result"></div></div>
+
+<div class="card"><h2>Length Converter</h2><label>Metres</label><input id="metres" type="number"><button onclick="calcLength()">Convert</button><div id="lenr" class="result"></div></div>
+
+<div class="card"><h2>Data Converter</h2><label>MB</label><input id="mb" type="number"><button onclick="calcData()">Convert</button><div id="datar" class="result"></div></div>
+
+<div class="card"><h2>Number Checker</h2><label>Number</label><input id="num" type="number"><button onclick="checkNum()">Check</button><div id="numr" class="result"></div></div>
+
+<div class="card"><h2>Even / Odd</h2><label>Number</label><input id="evenodd" type="number"><button onclick="checkEven()">Check</button><div id="evenr" class="result"></div></div>
+
+<div class="card"><h2>VAT / Tax Add</h2><label>Amount (₹)</label><input id="taxamt" type="number"><label>Tax (%)</label><input id="tax" type="number"><button onclick="calcTax()">Calculate</button><div id="taxr" class="result"></div></div>
+
+</div>
+<div class="ad">Advertisement</div>
+<section id="about" class="card" style="margin-top:20px"><h2>About QuickTools Hub</h2><p>QuickTools Hub provides simple, free calculators and converters for everyday use. Results are for general information and should be independently verified when used for financial decisions.</p></section>
+<section id="contact" class="card" style="margin-top:16px"><h2>Contact</h2><p>For website feedback or tool suggestions, add your email address here before publishing.</p><p class="small">Tip: create separate Privacy Policy, Disclaimer and Terms pages before applying for an ad network.</p></section>
+</main>
+<footer><div>© 2026 QuickTools Hub</div><p><a href="#">Privacy Policy</a> | <a href="#">Disclaimer</a> | <a href="#">Terms</a></p></footer>
+<script>
+const n=id=>parseFloat(document.getElementById(id).value);
+const out=(id,t)=>document.getElementById(id).textContent=t;
+function calcPercent(){out('pr',isFinite(n('p1'))&&isFinite(n('p2'))?(n('p1')*n('p2')/100).toFixed(2):'Enter values');}
+function calcAge(){let d=new Date(document.getElementById('dob').value),t=new Date();if(isNaN(d))return out('ager','Select date');let a=t.getFullYear()-d.getFullYear();if(t<new Date(t.getFullYear(),d.getMonth(),d.getDate()))a--;out('ager',a+' years');}
+function calcEMI(){let P=n('loan'),r=n('rate')/1200,m=n('months');if(!P||!m)return out('emir','Enter values');let e=r?P*r*Math.pow(1+r,m)/(Math.pow(1+r,m)-1):P/m;out('emir','Monthly EMI: ₹'+e.toFixed(2));}
+function calcGST(){let a=n('gstamt'),g=n('gst');if(!isFinite(a)||!isFinite(g))return out('gstr','Enter values');let x=a*g/100;out('gstr','GST: ₹'+x.toFixed(2)+' | Total: ₹'+(a+x).toFixed(2));}
+function calcSIP(){let P=n('sip'),annual=n('siprate'),y=n('sipyears'),r=annual/1200,months=y*12;if(!P||!months)return out('sipr','Enter values');let fv=P*((Math.pow(1+r,months)-1)/r)*(1+r);out('sipr','Invested: ₹'+(P*months).toFixed(0)+' | Value: ₹'+fv.toFixed(0));}
+function calcBMI(){let w=n('weight'),h=n('height')/100;if(!w||!h)return out('bmir','Enter values');out('bmir','BMI: '+(w/(h*h)).toFixed(1));}
+function calcDiscount(){let p=n('price'),d=n('disc');let save=p*d/100;out('discr','You save ₹'+save.toFixed(2)+' | Final: ₹'+(p-save).toFixed(2));}
+function calcPL(){let c=n('cp'),s=n('sp');if(!c||!isFinite(s))return out('plr','Enter values');let x=s-c;out('plr',x>=0?'Profit: ₹'+x.toFixed(2):'Loss: ₹'+(-x).toFixed(2));}
+function calcSI(){let p=n('siP'),r=n('siR'),t=n('siT');let i=p*r*t/100;out('sir','Interest: ₹'+i.toFixed(2)+' | Total: ₹'+(p+i).toFixed(2));}
+function calcCI(){let p=n('ciP'),r=n('ciR')/100,t=n('ciT');let total=p*Math.pow(1+r,t);out('cir','Interest: ₹'+(total-p).toFixed(2)+' | Total: ₹'+total.toFixed(2));}
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b)[a,b]=[b,a%b];return a}
+function calcRatio(){let a=n('ra'),b=n('rb');if(!a||!b)return out('rr','Enter values');let g=gcd(a,b);out('rr','Simplified ratio: '+a/g+':'+b/g);}
+function calcAvg(){let a=document.getElementById('avg').value.split(',').map(Number).filter(Number.isFinite);out('avgr',a.length?'Average: '+(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2):'Enter numbers');}
+function calcMinutes(){out('minr',isFinite(n('hours'))?(n('hours')*60)+' minutes':'Enter value');}
+function calcHours(){out('hourr',isFinite(n('minutes'))?(n('minutes')/60).toFixed(2)+' hours':'Enter value');}
+function calcTemp(){let x=n('temp');out('tempr',document.getElementById('unit').value==='c'?(x*9/5+32).toFixed(2)+' °F':((x-32)*5/9).toFixed(2)+' °C');}
+function calcLength(){out('lenr',isFinite(n('metres'))?(n('metres')*3.28084).toFixed(2)+' feet':'Enter value');}
+function calcData(){out('datar',isFinite(n('mb'))?(n('mb')/1024).toFixed(2)+' GB':'Enter value');}
+function checkNum(){let x=n('num');out('numr',isFinite(x)?(x>0?'Positive':x<0?'Negative':'Zero'):'Enter value');}
+function checkEven(){let x=n('evenodd');out('evenr',isFinite(x)?(x%2===0?'Even':'Odd'):'Enter value');}
+function calcTax(){let a=n('taxamt'),t=n('tax');let x=a*t/100;out('taxr','Tax: ₹'+x.toFixed(2)+' | Total: ₹'+(a+x).toFixed(2));}
+</script>
+</body>
+</html>
